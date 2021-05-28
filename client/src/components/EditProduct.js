@@ -5,17 +5,23 @@ import '../css/EditProduct.css';
 
 
 function EditProduct() {
-  let { product_id } = useParams();
+  const { id } = useParams();
+  const [product, setProduct] = useState('');
+
+  useEffect(() => {
+    Axios.get(`http://localhost:3001/api/product/${id}`).then((data) => {
+      setProduct(data.data);
+    });
+  });
   return (
     <div>
         <section className="body">
         <div className="product-page">
             <div className="product_info">
-            <h1>Tênis da Nike</h1>
-            <h2>R$300,00</h2>
-            <h3>Estoque: <span id="item_stock">10</span></h3>
-            <p>Esse tênis é realmente muito bom, você consegue andar com ele e ela vai junto.
-                Se você quer comprar um tênis de qualidade, compra esse aqui.</p>
+              <h1>{product.title}</h1>
+              <h2>R$ {product.price}</h2>
+              <h3>Estoque: {product.stock}</h3>
+              <p>{product.description}</p>
             </div>
             <div className="edit_side">
             <form action="POST">
