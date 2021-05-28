@@ -1,2 +1,23 @@
-node_modules
-config.json
+server/node_modules
+server/config.json
+server/README.md
+client/node_modules
+client/.pnp
+client/.pnp.js
+
+# testing
+client/coverage
+
+# production
+client/build
+
+# misc
+cliente/.DS_Store
+cliente/.env.local
+cliente/.env.development.local
+cliente/.env.test.local
+cliente/.env.production.local
+
+cliente/npm-debug.log*
+cliente/yarn-debug.log*
+cliente/yarn-error.log*

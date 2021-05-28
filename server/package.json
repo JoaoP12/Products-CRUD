@@ -2,13 +2,15 @@
   "name": "products-crud",
   "version": "1.0.0",
   "description": "This is a dev challenge from Alest. It is supposed to be part of my internship process.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "run": "node ./server.js"
+    "server": "node ./server.js"
   },
   "author": "João Pedro Lopes",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.8.0"
   }

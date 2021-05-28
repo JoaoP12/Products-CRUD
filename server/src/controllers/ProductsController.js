@@ -28,7 +28,8 @@ class ProductsController {
                         prod.data().title,
                         prod.data().description,
                         prod.data().price,
-                        prod.data().stock
+                        prod.data().stock,
+                        prod.data().imgLink
                     );
                     productsList.push(product);
                 });
