@@ -4,7 +4,12 @@ import Axios from 'axios';
 
 function DeletePopup (props) {
     const confirmDeletion = () => {
-        Axios.delete(`http://localhost/3001/api/delete/product/${props.productToDeleteId}`);
+        Axios.delete(`http://localhost:3001/api/product/${props.productToDeleteId}`) 
+            .then((res, err) => {
+                if(err) {
+                    console.log(err.message);
+                }
+            });
         props.setTrigger(false);
     };
     return (props.trigger) ? (
@@ -13,7 +18,7 @@ function DeletePopup (props) {
                 {props.children}
                 <div className="buttons">
                     <input className="btn" type="button" id="cancel_btn" value="Cancelar" onClick={()=> props.setTrigger(false)} />
-                    <input className="btn" type="button" id="confirm_btn" value="Confirmar" />
+                    <input className="btn" type="button" id="confirm_btn" value="Confirmar" onClick={() => confirmDeletion()} />
                 </div>
             </div>
         </div>

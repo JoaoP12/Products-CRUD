@@ -13,7 +13,7 @@ function HomePage () {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get("http://localhost:3000/api/product/get-all").then((data) => {
+    Axios.get("http://localhost:3001/api/product/get-all").then((data) => {
       setProductList(data.data);
     }, []);
   });
