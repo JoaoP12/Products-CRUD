@@ -20,7 +20,9 @@ Just run the command below in the server and client directories of your project.
 ```
 npm install
 ```
-####Firebase Firestore
+
+#### Firebase Firestore
+
 Before going ahead, you need to create a firebase project, then add a web app, create a Cloud Firestore database.
 After that, you need to create a config.json file within the *server* directory with the config object for your Firebase Service Account and SDK credentials. Further information about it can be found [here](https://firebase.google.com/docs/web/setup?hl=en-us).
 
