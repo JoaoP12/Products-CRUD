@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import Axios from "axios";
 import '../css/EditProduct.css';
 
@@ -7,6 +7,23 @@ import '../css/EditProduct.css';
 function EditProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [stock, setStock] = useState('');
+  const [imgLink, setImgLink] = useState('');
+
+  const updateProduct = () => {
+    Axios.put(`http://localhost:3001/api/product/${id}`, {
+      title: title || product.title,
+      description: description || product.description,
+      price: price || product.price,
+      stock: stock || product.stock,
+      imgLink: imgLink || product.imgLink
+    }).then((res, err)=> {
+      err ? console.log(err.message) : console.log("Alterado!");
+    });
+  };
 
   useEffect(() => {
     Axios.get(`http://localhost:3001/api/product/${id}`).then((data) => {
@@ -24,18 +41,20 @@ function EditProduct() {
               <p>{product.description}</p>
             </div>
             <div className="edit_side">
-            <form action="POST">
+            <form>
                 <label htmlFor="title_field">Novo Título</label>
-                <input type="text" id="title_field" className="form_field" />
+                <input type="text" id="title_field" className="form_field" onChange={(e)=>setTitle(e.target.value)} />
                 <label htmlFor="price_field">Novo Preço</label>
-                <input type="text" id="price_field" className="form_field" />
+                <input type="text" id="price_field" className="form_field" onChange={(e)=>setPrice(e.target.value)} />
                 <label htmlFor="stock_field">Novo Estoque</label>
-                <input type="text" id="stock_field" className="form_field" />
+                <input type="text" id="stock_field" className="form_field" onChange={(e)=>setStock(e.target.value)} />
                 <label htmlFor="stock_field">Nova Descrição</label>
-                <input type="text" id="description_field" className="form_field" />
+                <input type="text" id="description_field" className="form_field" onChange={(e)=>setDescription(e.target.value)} />
                 <label htmlFor="img_link_field">Link para nova imagem</label>
-                <input type="text" id="img_link_field" className="form_field" />
-                <input type="submit" defaultValue="Alterar" id="submit_button" />
+                <input type="text" id="img_link_field" className="form_field" onChange={(e)=>setImgLink(e.target.value)} />
+                <input type="submit" defaultValue="Alterar" id="submit_button" onClick={()=> {
+                  updateProduct();
+                }} />
             </form>
             </div>
         </div>
