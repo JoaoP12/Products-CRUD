@@ -14,7 +14,7 @@ function DeletePopup (props) {
     };
     return (props.trigger) ? (
         <div className="popup">
-            <div className="popup_inner">
+            <div className="popup-inner">
                 {props.children}
                 <div className="buttons">
                     <input className="btn" type="button" id="cancel_btn" value="Cancelar" onClick={()=> props.setTrigger(false)} />

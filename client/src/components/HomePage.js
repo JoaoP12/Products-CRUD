@@ -23,8 +23,8 @@ function HomePage () {
         <div className="products-list">
           <ol className="products-grid">
             <li>
-              <div className="add_product_container">
-                <a href="/create/product"><div id="add_product" /></a>
+              <div className="add-product-container">
+                <a href="/create/product"><div id="add-product" /></a>
                 <h2>Adicionar Produto</h2>
               </div>
             </li>
@@ -44,12 +44,12 @@ function HomePage () {
                       </div>
                       <div className="product-info">
                         <p>R$ {val.price}</p>
-                        <input id="edit_button" type="button" onClick={()=> { history.push(`/edit/product/${val.id}`)}} />
-                        <input id="delete_button" type="button" onClick={() => {
+                        <input id="edit-button" type="button" onClick={()=> { history.push(`/edit/product/${val.id}`)}} />
+                        <input id="delete-button" type="button" onClick={() => {
                           setProductDeleteId(val.id);
                           setPopupTrigger(true);
                         }} />
-                        <input id="visualize_button" type="button" onClick={()=> { history.push(`/view/product/${val.id}`)}} />
+                        <input id="view-button" type="button" onClick={()=> { history.push(`/view/product/${val.id}`)}} />
                       </div>
                     </div>
                   </li>  

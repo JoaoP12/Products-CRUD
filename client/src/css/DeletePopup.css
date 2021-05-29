@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.popup_inner {
+.popup-inner {
     position: relative;
     padding: 20px;
     width: 100%;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.popup_inner h2 {
+.popup-inner h2 {
     margin-bottom: 20px;
 }
 

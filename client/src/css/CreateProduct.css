@@ -36,7 +36,7 @@ body {
     background-color: #1a1b22;
 }
 
-.home_button {
+.home-button {
     width: 100px;
     height: 30px;
     left: 5%;
@@ -45,12 +45,12 @@ body {
     text-align: center;
 }
 
-.home_button p {
+.home-button p {
     text-decoration: none;
     font-size: 1.5em;
 }
 
-.home_button:hover{
+.home-button:hover{
     background-color: white;
     background-image: url("../img/home_icon.png");
     background-position: center;
@@ -69,7 +69,7 @@ body {
     justify-content: center;
 }
 
-.create_page {
+.create-page {
     min-height: 100vh;
     width: 50%;
     background: #323641;
@@ -97,7 +97,7 @@ label {
     color: white;
 }
 
-.form_field {
+.form-field {
     margin-top: 3px;
     margin-bottom: 30px;
     display: block;
