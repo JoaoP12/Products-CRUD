@@ -20,7 +20,7 @@ Just run the command below in the server and client directories of your project.
 ```
 npm install
 ```
-#####Firebase Firestore
+####Firebase Firestore
 Before going ahead, you need to create a firebase project, then add a web app, create a Cloud Firestore database.
 After that, you need to create a config.json file within the *server* directory with the config object for your Firebase Service Account and SDK credentials. Further information about it can be found [here](https://firebase.google.com/docs/web/setup?hl=en-us).
 
@@ -41,7 +41,7 @@ npm start
 >Note: You need to run the command above inside the *client* directory. And you need to be running both react and express servers simultaneously, otherwise you won't be able to use the program properly.
 
 If everything went well you should see a tab like this in your browser:
-![image](./interface_example.png)
+![image](https://github.com/JoaoP12/Products-CRUD/blob/master/interface_example.PNG)
 and the console running the express server should show this message:
 ```
 > node ./server.js
