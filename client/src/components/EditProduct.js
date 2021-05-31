@@ -37,20 +37,20 @@ function EditProduct() {
             <div className="product-info">
               <h1>{product.title}</h1>
               <h2>R$ {product.price}</h2>
-              <h3>Estoque: {product.stock}</h3>
+              <h3>Stock: {product.stock}</h3>
               <p>{product.description}</p>
             </div>
             <div className="edit-side">
             <form>
-                <label htmlFor="title_field">Novo Título</label>
+                <label htmlFor="title_field">New Title</label>
                 <input type="text" id="title_field" className="form-field" onChange={(e)=>setTitle(e.target.value)} />
-                <label htmlFor="price_field">Novo Preço</label>
+                <label htmlFor="price_field">New Price</label>
                 <input type="text" id="price_field" className="form-field" onChange={(e)=>setPrice(e.target.value)} />
-                <label htmlFor="stock_field">Novo Estoque</label>
+                <label htmlFor="stock_field">New Stock</label>
                 <input type="text" id="stock_field" className="form-field" onChange={(e)=>setStock(e.target.value)} />
-                <label htmlFor="stock_field">Nova Descrição</label>
+                <label htmlFor="stock_field">New Description</label>
                 <input type="text" id="description_field" className="form-field" onChange={(e)=>setDescription(e.target.value)} />
-                <label htmlFor="img_link_field">Link para nova imagem</label>
+                <label htmlFor="img_link_field">Link to the new picture</label>
                 <input type="text" id="img_link_field" className="form-field" onChange={(e)=>setImgLink(e.target.value)} />
                 <input type="submit" defaultValue="Alterar" id="submit_button" onClick={()=> {
                   updateProduct();

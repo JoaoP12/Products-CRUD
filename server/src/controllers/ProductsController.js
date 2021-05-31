@@ -80,7 +80,7 @@ class ProductsController {
             await product.update(data);
             res.status(200).send("Product updated successfully");
         } catch (error) {
-            res.status(400).send(error.message);
+            res.status(400).send("Deu erro aqui");
         }
     }
 }

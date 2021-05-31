@@ -11,7 +11,7 @@ function App() {
       <header>
         <div className="header">
           <div className="home-button"><a href="/"><p>Home</p></a></div>
-          <div className="title"><h1>Produtos CRUD</h1></div>
+          <div className="title"><h1>Products CRUD</h1></div>
         </div>
       </header>
 

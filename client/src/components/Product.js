@@ -26,7 +26,7 @@ function Product (){
                     <div className="info-side">
                         <h1>{product.title}</h1>
                         <h2>R$ {product.price}</h2>
-                        <h3>Estoque: {product.stock}</h3>
+                        <h3>Stock: {product.stock}</h3>
                         <p>{product.description}</p>
                     </div>
                 </div>

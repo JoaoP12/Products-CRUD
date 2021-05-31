@@ -25,7 +25,7 @@ function HomePage () {
             <li>
               <div className="add-product-container">
                 <a href="/create/product"><div id="add-product" /></a>
-                <h2>Adicionar Produto</h2>
+                <h2>Add product</h2>
               </div>
             </li>
             {
