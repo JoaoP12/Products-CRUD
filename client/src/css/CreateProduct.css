@@ -15,7 +15,7 @@ h1, h2, h3 {
 h2, h3 {
     font-weight: normal;
 }
-p {
+p, span {
     font-family: Arial, sans-serif;
     color: white;
     word-wrap: break-word;
@@ -116,4 +116,9 @@ label {
     border-radius: 7%;
     width: 120px;
     height: 40px;
+}
+
+span {
+    font-size: 0.8em;
+    color: #d7231a;
 }
