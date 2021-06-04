@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { Redirect } from 'react-router-dom'
 import Axios from "axios";
 import '../css/CreateProduct.css';
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import createProductSchema from '../schemas/createProductSchema';
 
 
 function CreateProduct() {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [stock, setStock] = useState("");
-  const [description, setDescription] = useState("");
-  const [imgLink, setLink] = useState("");
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(createProductSchema),
+  });
 
-  const submitProduct = () => {
+  const submitProduct = (data) => {
     Axios.post("http://localhost:3001/api/product/create", {
       title: title,
       price: price,
@@ -18,25 +20,41 @@ function CreateProduct() {
       description: description,
       imgLink: imgLink
     });
-  };
+  }
+
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+  const [description, setDescription] = useState("");
+  const [imgLink, setLink] = useState("");
 
   return (
     <div>   
       <section className="body">
         <div className="create-page">
           <h2>Create Product</h2>
-          <form>
-            <label htmlFor="title_field">Title</label>
-            <input type="text" id="title_field" className="form-field" onChange={(e)=>{setTitle(e.target.value);}} />
-            <label htmlFor="price_field">Price</label>
-            <input type="text" id="price_field" className="form-field" onChange={(e)=>{setPrice(e.target.value);}} />
-            <label htmlFor="stock_field">Stock</label>
-            <input type="text" id="stock_field" className="form-field" onChange={(e)=>{setStock(e.target.value);}} />
-            <label htmlFor="stock_field">New Description</label>
-            <input type="text" id="description_field" className="form-field" onChange={(e)=>{setDescription(e.target.value);}} />
-            <label htmlFor="img_link_field">Link to the product's picture</label>
-            <input type="text" id="img_link_field" className="form-field" onChange={(e)=>{setLink(e.target.value);}} />
-            <input type="submit" defaultValue="Create" id="submit_button" onClick={submitProduct} />
+          <form onSubmit={handleSubmit(submitProduct)}>
+            <label>Title</label>
+            <input type="text" id="titlef" className="form-field" {...register('title')} onChange={(e)=>{setTitle(e.target.value);}} />
+            <span>{errors.title?.message}</span> <br />
+            
+            <label>Price</label>
+            <input type="text" className="form-field" {...register('price')} onChange={(e)=>{setPrice(e.target.value);}} />
+            <span>{errors.price?.message && "Price must be a positive float or integer"}</span> <br />
+
+            <label>Stock</label>
+            <input type="text" className="form-field" {...register('stock')} onChange={(e)=>{setStock(e.target.value);}} />
+            <span>{errors.stock?.message && "Stock is required and  must be a positive non-decimal number"}</span> <br />
+
+            <label>New Description</label>
+            <input type="text" className="form-field" {...register('description')} onChange={(e)=>{setDescription(e.target.value);}} />
+            <span>{errors.description?.message}</span> <br />
+
+            <label>Link to the product's picture</label>
+            <input type="text" id="link" className="form-field" {...register('imgLink')} onChange={(e)=>{setLink(e.target.value);}} />
+            <span>{errors.imgLink?.message}</span> <br />
+
+            <input type="submit" defaultValue="Create" id="submit_button" />
           </form>
         </div>
       </section>
