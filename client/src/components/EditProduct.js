@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams} from 'react-router-dom';
+import { useParams} from "react-router-dom";
 import Axios from "axios";
-import '../css/EditProduct.css';
-
+import "../css/EditProduct.css";
 
 function EditProduct() {
   const { id } = useParams();
@@ -30,11 +29,12 @@ function EditProduct() {
       setProduct(data.data);
     });
   });
+
   return (
     <div>
         <section className="body">
         <div className="product-page">
-            <div className="product-info">
+            <div className="product-information">
               <h1>{product.title}</h1>
               <h2>R$ {product.price}</h2>
               <h3>Stock: {product.stock}</h3>
