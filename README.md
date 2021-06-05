@@ -71,9 +71,9 @@ The button "Home" in the top left side of your page will redirect you to the hom
         - [x] Validate fields.
         - [x] Show message for which fields were filled incorrectly.
         - [ ] Show message and redirect to the home page when the product was edited/created successfully.
-    - [ ] Edit Product's form.
-        - [ ] Validate fields.
-        - [ ] Show message for which fields were filled incorrectly.
+    - [x] Edit Product's form.
+        - [x] Validate fields.
+        - [x] Show message for which fields were filled incorrectly.
         - [ ] Show message and redirect to the home page when the product was edited/created successfully.
 - [ ] Implement product search algorithm.
     - [ ] Create search field in home page view.
