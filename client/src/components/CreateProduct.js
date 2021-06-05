@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Redirect } from 'react-router-dom'
 import Axios from "axios";
 import '../css/CreateProduct.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import createProductSchema from '../schemas/createProductSchema';
+import { createProductSchema } from '../schemas/productValidationSchema';
+import { useHistory } from "react-router-dom";
 
 
 function CreateProduct() {
@@ -12,14 +12,16 @@ function CreateProduct() {
     resolver: yupResolver(createProductSchema),
   });
 
+  const history = useHistory();
+
   const submitProduct = (data) => {
     Axios.post("http://localhost:3001/api/product/create", {
-      title: title,
-      price: price,
-      stock: stock,
-      description: description,
-      imgLink: imgLink
-    });
+      title,
+      price,
+      stock,
+      description,
+      imgLink
+    }).then(res => { history.push("/"); });
   }
 
   const [title, setTitle] = useState("");
