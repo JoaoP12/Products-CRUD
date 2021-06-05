@@ -21,7 +21,10 @@ function CreateProduct() {
       stock,
       description,
       imgLink
-    }).then(res => { history.push("/"); });
+    }).then(res => {
+      alert("Product created successfully!");
+      history.push("/");
+    });
   }
 
   const [title, setTitle] = useState("");

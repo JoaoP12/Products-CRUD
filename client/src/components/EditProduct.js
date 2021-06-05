@@ -28,7 +28,10 @@ function EditProduct() {
       price: price || product.price,
       stock: stock || product.stock,
       imgLink: imgLink || product.imgLink
-    }).then(res => { history.push("/"); })
+    }).then(res => {
+      alert("Product created successfully!");
+      history.push("/");
+    })
     
   }
 
