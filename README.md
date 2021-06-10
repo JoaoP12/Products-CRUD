@@ -66,7 +66,7 @@ The button "Home" in the top left side of your page will redirect you to the hom
 #### Search
 
 It is now possible to search products through a search bar:
-You just need to type in the name of the product, and all the products that match the input will be shown. 
+You just need to enter the name of the product, and all the products that match the input will be shown. 
 
 ![image](https://github.com/JoaoP12/Products-CRUD/blob/master/search_interface.PNG)
 >The search bar. There is no need to press enter, the search is done in real time.
