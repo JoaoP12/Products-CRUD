@@ -52,11 +52,36 @@ body {
 }
 
 /* Products */
-.products-list {
+
+#search-bar {
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+#search-bar input {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15pt;
+    padding-left: 1%;
+    border-style: none;
+}
+
+.main-body {
     min-height: 100vh;
     width: 50%;
     background: #323641;
     height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.products-list {
+    height: 90%;
     position: relative;
     display: flex;
     padding: 30px;
@@ -162,18 +187,10 @@ body {
     background-position: center;
 }
 
-#add-product:hover {
-    background-color: #35046a;
-}
-
-#view-button:hover {
-    background-color: #35046a;
-}
-
-#delete-button:hover {
-    background-color: #35046a;
-}
-
-#edit-button:hover {
+#add-product:hover,
+#view-button:hover,
+#delete-button:hover,
+#edit-button:hover,
+#search-bar span:hover {
     background-color: #35046a;
 }
