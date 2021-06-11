@@ -11,7 +11,6 @@ function filterProducts (queryString, productList) {
   }
   const queryProducts = productList.filter((p)=> {
     const similarity = stringSimilarity.compareTwoStrings(p.title, queryString);
-    console.log(similarity);
     return similarity >= 0.5;
   });
   return queryProducts;
@@ -26,10 +25,14 @@ function HomePage () {
   
 
   useEffect(() => {
+    const source = Axios.CancelToken.source();
+
     Axios.get("http://localhost:3001/api/product/get-all").then((data) => {
       setProductList(data.data);
     });
-  });
+
+    return () => { source.cancel() }
+  }, []);
 
   const queryProducts = useMemo(()=> filterProducts(queryString, productList), [queryString, productList]);
 

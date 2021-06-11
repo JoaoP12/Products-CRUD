@@ -29,17 +29,20 @@ function EditProduct() {
       stock: stock || product.stock,
       imgLink: imgLink || product.imgLink
     }).then(res => {
-      alert("Product created successfully!");
+      alert("Product edited successfully!");
       history.push("/");
     })
     
   }
 
   useEffect(() => {
+    const source = Axios.CancelToken.source();
     Axios.get(`http://localhost:3001/api/product/${id}`).then((data) => {
       setProduct(data.data);
     });
-  });
+
+    return () => { source.cancel() }
+  }, []);
 
   return (
     <div>
