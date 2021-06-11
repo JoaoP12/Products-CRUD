@@ -36,9 +36,9 @@ const createProductSchema = yup.object().shape({
 const editProductSchema = yup.object().shape({
     title: yup.string().trim(),
     description: yup.string().trim(),
-    imgLink: yup.string().trim().test("edit-link-test", "You must fill up with a valid link", testImgLink),
+    imgLink: yup.string().trim().test("img-link-test", "The input must be a valid link or none", testImgLink),
     price: yup.string().test("price-test", "The input must be a valid price.(e.g: 25,00 or 25.00)", testPrice),
     stock: yup.string().trim().test("stock-int-test", "Stock must be a valid positive integer", testStock)
 });
 
-export { createProductSchema, editProductSchema}
+export { createProductSchema, editProductSchema }
