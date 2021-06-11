@@ -85,7 +85,7 @@ You just need to enter the name of the product, and all the products that match 
 - [x] Implement product search algorithm.
     - [x] Create search field in home page view.
     - [x] Implement algorithm to search products that match with the user input.
-- [ ] Fix errors appearing on the console.
+- [x] Fix errors appearing on the console.
 - [ ] Improve styling.
 - [ ] Handle possible backend errors when requesting from frontend.
 - [ ] Improve documentation.
