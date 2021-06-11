@@ -8,9 +8,12 @@ function DeletePopup (props) {
             .then((res, err) => {
                 if(err) {
                     console.log(err.message);
+                    return;
                 }
+                props.setTrigger(false);
+                window.location.reload();   
             });
-        props.setTrigger(false);
+        
     };
     return (props.trigger) ? (
         <div className="popup">
